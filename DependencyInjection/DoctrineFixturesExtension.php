@@ -21,7 +21,7 @@ class DoctrineFixturesExtension extends Extension{
 		$configuration = new Configuration();
 		$config = $this->processConfiguration($configuration, $configs);
 	
-		$container->setParameter('doctrine.data-fixtures.orm.excluded', $config['data_fixtures']['orm']['excluded']);
+		$container->setParameter('doctrine.data-fixtures.orm.excluded', $config['orm']['excluded']);
 		/*
 		$loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 		$loader->load('services.yml');

@@ -17,12 +17,11 @@ class Configuration implements ConfigurationInterface{
 	public function getConfigTreeBuilder()
 	{
 		$treeBuilder = new TreeBuilder();
-		$rootNode = $treeBuilder->root('data_fixtures','array');
+		$rootNode = $treeBuilder->root('doctrine_fixtures');
 		$rootNode
-		->addDefaultChildrenIfNoneSet()
 		->children()
 			->arrayNode('orm')
-				->addDefaultChildrenIfNoneSet()
+				->addDefaultsIfNotSet()
 				->children()
 					->arrayNode('excluded')
 						->treatNullLike(array())
@@ -32,10 +31,6 @@ class Configuration implements ConfigurationInterface{
 				->end()
 			->end()
 		->end();
-	
-		// Here you should define the parameters that are allowed to
-		// configure your bundle. See the documentation linked above for
-		// more information on that topic.
 	
 		return $treeBuilder;
 	}
