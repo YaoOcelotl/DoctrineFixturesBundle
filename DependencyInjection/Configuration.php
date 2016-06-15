@@ -1,4 +1,6 @@
 <?php
+namespace Doctrine\Bundle\FixturesBundle\DependencyInjection;
+
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
