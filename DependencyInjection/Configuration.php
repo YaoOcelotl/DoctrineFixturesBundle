@@ -17,10 +17,12 @@ class Configuration implements ConfigurationInterface{
 	public function getConfigTreeBuilder()
 	{
 		$treeBuilder = new TreeBuilder();
-		$rootNode = $treeBuilder->root('data-fixtures');
-		$rootNode->children()
+		$rootNode = $treeBuilder->root('data_fixtures','array');
+		$rootNode
+		->addDefaultChildrenIfNoneSet()
+		->children()
 			->arrayNode('orm')
-				->addDefaultsIfNotSet()
+				->addDefaultChildrenIfNoneSet()
 				->children()
 					->arrayNode('excluded')
 						->treatNullLike(array())
